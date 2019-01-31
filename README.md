@@ -23,6 +23,16 @@ ionic cordova plugin add cordova-sqlite-storage
 npm install --save @ionic/storage
 ```
 
+### Login Screen
+```
+ionic g page public/login
+ionic g page public/register
+ionic g page members/dashboard
+ionic g service services/authentication
+ionic g service services/authGuard
+ng generate module members/member-routing --flat
+``` 
+
 ### Deprecated stuff v3 -> v4
 <ion-nav>
 
