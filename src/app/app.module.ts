@@ -18,15 +18,18 @@ import { ErrorHandler } from '@angular/core';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
+  imports: [BrowserModule,
+    IonicModule.forRoot(),
+    IonicModule.forRoot(),
+    AppRoutingModule,
     IonicStorageModule.forRoot()],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     Camera,
-    {provide: ErrorHandler, useClass: ErrorHandler}
+    { provide: ErrorHandler, useClass: ErrorHandler }
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
