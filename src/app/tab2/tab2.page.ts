@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { PhotoService } from '../services/photo.service';
 
@@ -10,7 +10,11 @@ import { PhotoService } from '../services/photo.service';
 export class Tab2Page {
   currentImage: any;
 
-  constructor(public photoservice: PhotoService) { }
+  constructor(public photoService: PhotoService) { }
+
+  ngOnInit() {
+    this.photoService.loadSaved();
+  }
 }
 
 

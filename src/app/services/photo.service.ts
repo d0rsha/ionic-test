@@ -1,16 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { Storage } from '@ionic/storage';
 
 @Injectable({
   providedIn: 'root'
 })
 
-class Photo {
-  data: any;
-}
 export class PhotoService {
   public photos: Photo[] = [];
-  constructor(private camera: Camera) { }
+  constructor(private camera: Camera, private storage: Storage) { }
+
+  loadSaved() {
+    this.storage.get('photos').then((photos) => {
+      this.photos = photos || [];
+    });
+  }
 
   takePicture() {
     const options: CameraOptions = {
@@ -23,10 +27,19 @@ export class PhotoService {
     this.camera.getPicture(options).then((imageData) => {
       // Add new photo to gallery
       this.photos.unshift({
-          data: 'data:image/jpeg;base64,' + imageData
-      }); }, (err) => {
+        data: 'data:image/jpeg;base64,' + imageData
+      });
+
+      // Save all photos for later viewing
+      this.storage.set('photos', this.photos);
+    }, (err) => {
       // Handle error
       console.log('Camera issue: ' + err);
-  });
+    });
   }
+}
+
+
+class Photo {
+  data: any;
 }

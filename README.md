@@ -16,7 +16,11 @@ ionic cordova platform add ios
 ionic cordova platform add android 
 ```
 
-
+### SQL storage
+```
+ionic cordova plugin add cordova-sqlite-storage
+npm install --save @ionic/storage
+```
 
 
 
