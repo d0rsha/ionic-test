@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+  myVariable = '';
 
   constructor(private authService: AuthenticationService) { }
 
@@ -15,6 +16,10 @@ export class LoginPage implements OnInit {
 
   login() {
     this.authService.login();
+  }
+
+  clickMe() {
+    this.myVariable = 'Yo Click baited';
   }
 
 }

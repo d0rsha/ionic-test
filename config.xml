@@ -87,5 +87,5 @@
         <string>Used to take pictures</string>
     </edit-config>
     <plugin name="cordova-sqlite-storage" spec="2.6.0" />
-    <engine name="android" spec="~7.1.4" />
+    <engine name="android" spec="7.1.4" />
 </widget>
