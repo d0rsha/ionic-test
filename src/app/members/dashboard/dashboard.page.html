@@ -3,10 +3,12 @@
     <ion-buttons slot="start">
         <ion-back-button defaultHref="/login"></ion-back-button>
     </ion-buttons>
-    <ion-title>Register</ion-title>
+    <ion-title>Logged in</ion-title>
   </ion-toolbar>
 </ion-header>
  
 <ion-content padding>
- 
+  <ion-button expand="block" color="secondary" routerLink="/tabs/tab1" routerDirection="root">Tabs</ion-button>
+  <ion-button (click)="go()">Tab1</ion-button>
+
 </ion-content>
